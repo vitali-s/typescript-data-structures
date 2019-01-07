@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Mocha - Current",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\mocha -r .\\node_modules\\ts-node\\register",
+            "args": [
+                    "${relativeFile}"
+            ],
+            "group": "test",
+            "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Mocha - All",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\mocha --recursive -r .\\node_modules\\ts-node\\register",
+            "args": [
+                    "./**/*.spec.ts"
+            ],
+            "group": "test",
+            "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "dedicated"
+            }
+        }
+    ]
+}
