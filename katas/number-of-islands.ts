@@ -2,6 +2,12 @@ import './../cross-cutting/collection-extensions';
 
 const WATER = 0;
 const EARTH = 1;
+const LAND_CONNECTIONS = [
+    [0, +1],
+    [0, -1],
+    [+1, 0],
+    [-1, 0],
+];
 
 export class Word {
 
@@ -38,10 +44,9 @@ export class Word {
     }
 
     checkCells(row: number, column: number) {
-        this.checkCell(row, column + 1);
-        this.checkCell(row, column - 1);
-        this.checkCell(row + 1, column);
-        this.checkCell(row - 1, column);
+        for (const land of LAND_CONNECTIONS) {
+            this.checkCell(row + land[0], column + land[1]);
+        }
     }
 
     checkCell(row: number, column: number) {
