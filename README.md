@@ -71,5 +71,5 @@ f(n) order of growth (whole time complexity is available at: https://en.wikipedi
 * N(3) - cubic, like triple loop
 * 2(N) - exponential, 
 
-
+## Sorting
 
